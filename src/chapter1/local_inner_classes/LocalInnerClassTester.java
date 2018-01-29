@@ -5,7 +5,7 @@ public class LocalInnerClassTester {
         Outer outer = new Outer();
         outer.displayST();
 
-        // Kompiliert nicht, da die Klasse nur innerhalb der Methode deklariert werden kann
+        // Kompiliert nicht, da die Klasse nur innerhalb der Methode verwendet werden kann
         // Outer.LocalInner inner = new Outer().new LocalInner();
 
     }
@@ -29,10 +29,12 @@ class Outer {
         class LocalInner {
 
             int i = 41;
+            String s = "inner s";
 
             void displayMessage() {
 
-                System.out.println(s);
+                System.out.println(s); // inner s
+                System.out.println(Outer.this.s); // outer s
                 System.out.println(t);
                 System.out.println(i);
 

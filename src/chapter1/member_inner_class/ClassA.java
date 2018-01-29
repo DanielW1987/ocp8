@@ -15,9 +15,10 @@ public class ClassA {
      *************************************************************************/
     public class ClassB{
         int j;
-        // static int k;    => DOES NOT COMPILE
+        // static int k;        // dürfen keine statischen Felder besiten
+        final static int k = 1; // es denn sie sind final
 
-        // private static void doSomething(){}    => DOES NOT COMPILE
+        // private static void doSomething(){} // dürfen keine statischen Methoden besitzen
 
         // Zugriff auf Variablen der umhüllenden Klasse möglich
         private int getIFromA(){
@@ -31,10 +32,10 @@ public class ClassA {
      **************************************************************************/
     private interface inner{
 
-        // In inner interfaces können nicht auf die Instanzvariablen der umhüllenden Klasse zugegriffen werden
+        // In inner interfaces kann nicht auf die Instanzvariablen der umhüllenden Klasse zugegriffen werden
         // public default int inner(){ return i; }; => DOES NOT COMPILE
 
-        public abstract void inner();
+        public abstract void innerMethod();
     }
     /**************************************************************************/
 

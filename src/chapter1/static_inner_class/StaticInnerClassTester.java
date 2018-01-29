@@ -38,9 +38,9 @@ class Outer {
 
         static void displayS(){
 
-            System.out.println(s);
-            System.out.println(t);
-            System.out.println(new Outer().s);
+            System.out.println(s); // nested s
+            System.out.println(t); // outer t
+            System.out.println(new Outer().s); // outer s
 
         }
 
@@ -52,8 +52,8 @@ class Outer {
     public void executeStaticNested(){
 
         StaticNested.displayS();
+        System.out.println(StaticNested.s); // <= Member der statischen Klasse
         // StaticNested.displayOtherThins(); => DOES NOT COMPILE
 
     }
-
 }

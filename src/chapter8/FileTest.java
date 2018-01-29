@@ -10,7 +10,7 @@ public class FileTest {
         // construct file objects
         File file = new File( "C:/Temp/test.txt" );
         File dir  = new File( "C:/Temp/Dir" );
-        File dirs = new File( "C:/Temp/A/B/C/D" );
+        File dirs = new File( "C:/Temp/A/B2/C/D" );
         File dirA = new File( "C:/Temp/a" );
 
         // create file
@@ -25,7 +25,7 @@ public class FileTest {
         // check if the file and directories exists
         System.out.println( "exists test.txt? " + file.exists() );
         System.out.println( "exists Dir? " + dir.exists() );
-        System.out.println( "exists A/B/C/D? " + dirs.exists() );
+        System.out.println( "exists A/B2/C/D? " + dirs.exists() );
 
         // print name and absolute path
         System.out.println( "Name of File: " + file.getName() );

@@ -23,8 +23,7 @@ public class OptionalType {
         if( o2.isPresent() ){
             System.out.println( o2.get() );
         }
-    }   
-    
+    }
     
     public static Optional<Double> average( int... scores ){
             
@@ -40,7 +39,5 @@ public class OptionalType {
             
             return Optional.of( (double)( sum / scores.length ) );
         }
-        
-        
     }
 }

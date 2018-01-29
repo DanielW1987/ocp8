@@ -8,13 +8,16 @@ public class ClassD {
 
     private int i = 30;
 
-    class ClassE{
+    private class ClassE{
 
         private int i = 20;
+        // private static int j = 40; // Inner classes cannot have static declarations
 
-        class ClassF{
+        public class ClassF{
 
             private int i = 10;
+
+            // public static void print(){} // Inner classes cannot have static declarations
 
             public void print(){
 
@@ -45,6 +48,16 @@ public class ClassD {
         ClassD.ClassE.ClassF f2 = e.new ClassF();
 
         f.print();
+
+    }
+
+    // in einer nicht-statischen Methode können die Objekte ganz gewöhnlich instanziiert werden
+    // Member classes einer Member class können nur über eine Instanz des Members instanziiert werden (siehe ClassF)
+    public void init(){
+
+        ClassD d = new ClassD();
+        ClassE e = new ClassE();
+        ClassE.ClassF f = new ClassE().new ClassF();
 
     }
 

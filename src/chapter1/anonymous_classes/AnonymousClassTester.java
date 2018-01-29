@@ -44,7 +44,7 @@ class AnonymousClassTester {
          * Beispiel 3
          */
         reallyStrange(new HelloWorld());    // Ausgabe: Hello World
-        reallyStrange(new HelloWorld(){     // Ausgabe: Reaööy strange stuff
+        reallyStrange(new HelloWorld(){     // Ausgabe: Really strange stuff
 
             @Override
             void displayMessage(){

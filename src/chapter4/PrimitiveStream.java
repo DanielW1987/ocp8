@@ -6,7 +6,6 @@ import java.util.stream.Stream;
 
 public class PrimitiveStream {
 
-
     /*
      * Üblicherweise verwendet man einen Stream über einen Typen T, um Auswertungen über Elemente dieses Typs zu machen.
      * Eine Entsprechung für ints ist im folgenden Listing zu sehen. Dabei wird der Stream verwendet, um die Summe der
@@ -15,7 +14,7 @@ public class PrimitiveStream {
     int evenSum(int fromInclusive, int toExclusive) {
 
         return IntStream.range(fromInclusive, toExclusive)
-                .filter(i -> i % 3 != 0)
+                .filter(i -> i % 2 == 0)
                 .sum();
 
     }
@@ -36,7 +35,7 @@ public class PrimitiveStream {
      * sequentiell aufsteigender ints zu erzeugen. Für DoubleStream gibt es dazu keine Entsprechung. Doch mit Hilfe
      * von IntStream lässt sich einfach eine dazu konstruieren, wie im folgenden Listing zu sehen.
      */
-    DoubleStream range(int from, int to, double scale) {
+    DoubleStream range(int from, int to, double scale){
 
         return IntStream.range(from, to)
                 .mapToDouble(i -> i * scale);

@@ -23,5 +23,4 @@ public class FunctionAndBiFunction {
         System.out.println( bf2.apply("Hallo ", "Welt") );
         
     }
-    
 }

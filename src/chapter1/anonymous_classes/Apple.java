@@ -19,7 +19,7 @@ public class Apple {
         m1.start();
 
         // Anonyme Klasse bei Verwendung eines Interfaces (hier ist alternativ auch ein Lambda-Ausdruck möglich)
-        Plant p = new Plant(){
+        Plant p1 = new Plant(){
 
             @Override
             public void grow() {
@@ -27,7 +27,10 @@ public class Apple {
             }
         };
 
-        p.grow();
+        p1.grow();
+
+        Plant p2 = () -> System.out.println("Plant growing");
+        p2.grow();
 
         // Anonyme Klasse wird als Methodenparameter übergeben
         ArrayList<String> list = new ArrayList<>();

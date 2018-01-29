@@ -77,23 +77,23 @@ public class PathTest {
 
         // resolve() mit 2 absoluten Path-Objekten
         Path resolvePath1 = Paths.get( "C:/Temp/A" );
-        Path resolvePath2 = Paths.get( "C:/Temp/B" );
+        Path resolvePath2 = Paths.get( "C:/Temp/B2" );
         System.out.println( "resolve mit 2 absoluten Path-Objekten: " + resolvePath1.resolve(resolvePath2) ); // Rückgabe ist Kopie des Parameters
 
         // resolve() mit 2 relativen Path-Objekten
         Path resolvePath3 = Paths.get( "Temp/A" );
-        Path resolvePath4 = Paths.get( "Temp/B" );
-        System.out.println( "resolve mit 2 relativen Path-Objekten: " + resolvePath3.resolve(resolvePath4) ); // Rückgabe ist die Verkettung beider Objekte zu Temp\A\Temp\B
+        Path resolvePath4 = Paths.get( "Temp/B2" );
+        System.out.println( "resolve mit 2 relativen Path-Objekten: " + resolvePath3.resolve(resolvePath4) ); // Rückgabe ist die Verkettung beider Objekte zu Temp\A\Temp\B2
 
         // resolve() mit relativen Path als Basis und absoluten Path als Parameter
         Path resolvePath5 = Paths.get( "Temp/A" );
-        Path resolvePath6 = Paths.get( "C:/Temp/B" );
+        Path resolvePath6 = Paths.get( "C:/Temp/B2" );
         System.out.println( "resolve mit relativen Path als Basis und absoluten Path als Parameter: " + resolvePath5.resolve(resolvePath6) ); // Rückgabe ist Kopie des Parameters
 
         // resolve() mit absoluten Path als Basis und relativen Path als Parameter
         Path resolvePath7 = Paths.get( "C:/Temp/A" );
-        Path resolvePath8 = Paths.get( "Temp/B" );
-        System.out.println( "resolve mit absoluten Path als Basis und relativen Path als Parameter: " + resolvePath7.resolve(resolvePath8) ); // Rückgabe ist die Verkettung beider Objekte zu C:\Temp\A\Temp\B
+        Path resolvePath8 = Paths.get( "Temp/B2" );
+        System.out.println( "resolve mit absoluten Path als Basis und relativen Path als Parameter: " + resolvePath7.resolve(resolvePath8) ); // Rückgabe ist die Verkettung beider Objekte zu C:\Temp\A\Temp\B2
 
         // normalize()
         Path path15   = Paths.get( "E:\\data" );

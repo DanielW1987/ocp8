@@ -25,8 +25,8 @@ public class FilesTest {
         }
 
         // isSameFile()
-        Path sameFile1 = Paths.get( "C:\\Temp\\A\\B" );
-        Path sameFile2 = Paths.get( "C:\\Temp\\A\\..\\A\\B" );
+        Path sameFile1 = Paths.get( "C:\\Temp\\A\\B2" );
+        Path sameFile2 = Paths.get( "C:\\Temp\\A\\..\\A\\B2" );
         System.out.println(Files.isSameFile(sameFile1, sameFile2));
 
         // createDirectory() und createDirectories()
@@ -34,9 +34,9 @@ public class FilesTest {
         Files.deleteIfExists( Paths.get( "src/chapter9/files/A" ) );
         Files.createDirectory(dir1); // wirft FileAlreadyExistException wenn Path bereits existiert
 
-        Path dir2 = Paths.get( "src/chapter9/files/B/C/D/E" );
-        Files.deleteIfExists( Paths.get( "src/chapter9/files/B/C/D/E/foto-backup.jpeg" ) );
-        Files.deleteIfExists( Paths.get( "src/chapter9/files/B/C/D/E" ) );
+        Path dir2 = Paths.get( "src/chapter9/files/B2/C/D/E" );
+        Files.deleteIfExists( Paths.get( "src/chapter9/files/B2/C/D/E/foto-backup.jpeg" ) );
+        Files.deleteIfExists( Paths.get( "src/chapter9/files/B2/C/D/E" ) );
         Files.createDirectories(dir2); // wirft FileAlreadyExistException wenn Path bereits existiert
 
         // copy()
@@ -44,7 +44,7 @@ public class FilesTest {
 
         // move()
         Path move1 = Paths.get( "C:\\Users\\Daniel\\IdeaProjects\\ocp8\\src\\chapter9\\files\\MOVE\\A\\test.txt" );
-        Path move2 = Paths.get( "C:\\Users\\Daniel\\IdeaProjects\\ocp8\\src\\chapter9\\files\\MOVE\\B\\text-move.txt" );
+        Path move2 = Paths.get( "C:\\Users\\Daniel\\IdeaProjects\\ocp8\\src\\chapter9\\files\\MOVE\\B2\\text-move.txt" );
 
         if( Files.exists(move1) ){
             Files.move( move1, move2 );
@@ -55,7 +55,7 @@ public class FilesTest {
 
         // newBufferedReader(), new BufferedWriter
         Path source = Paths.get( "C:\\Users\\Daniel\\IdeaProjects\\ocp8\\src\\chapter9\\files\\Buffered\\A\\test.txt" );
-        Path target = Paths.get( "C:\\Users\\Daniel\\IdeaProjects\\ocp8\\src\\chapter9\\files\\Buffered\\B\\test-backup.txt" );
+        Path target = Paths.get( "C:\\Users\\Daniel\\IdeaProjects\\ocp8\\src\\chapter9\\files\\Buffered\\B2\\test-backup.txt" );
 
         try(BufferedReader reader = Files.newBufferedReader( source, Charset.defaultCharset() );
             BufferedWriter writer = Files.newBufferedWriter( target, Charset.defaultCharset() ) ){

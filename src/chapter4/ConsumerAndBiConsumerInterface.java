@@ -34,8 +34,8 @@ public class ConsumerAndBiConsumerInterface {
         ints.forEach( System.out::println );
         
         // Werte einer Map ausgeben
-        BiConsumer<String, String> b2 = (t, u) -> System.out.println( t + "->" + u );
-        BiConsumer<String, String> b3 = b2.andThen( (t, u) -> System.out.println( u + "<-" + t ) );
+        BiConsumer<String, String> b2 = (k, v) -> System.out.println( k + "->" + v );
+        BiConsumer<String, String> b3 = b2.andThen( (k, v) -> System.out.println( v + "<-" + k ) );
         map.forEach( b3 );
     }
     

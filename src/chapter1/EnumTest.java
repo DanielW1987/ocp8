@@ -9,6 +9,8 @@ enum Y{ // only 1 public top level declaration per file is allowed
         // int a = i; // it's not allowed to access non-final static fields
         int b = j;
     }
+
+    public void doSomething(){}
 }
 
 public class EnumTest {

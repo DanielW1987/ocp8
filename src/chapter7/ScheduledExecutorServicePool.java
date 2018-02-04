@@ -16,7 +16,7 @@ public class ScheduledExecutorServicePool {
         try{
             service.scheduleWithFixedDelay(() -> System.out.println(counter++), 0, 1, TimeUnit.SECONDS);
             service.schedule(() -> System.out.println("Hello World!"), 3, TimeUnit.SECONDS);
-            Future<Integer> result = service.schedule(() -> {System.out.println(10); return 10;}, 10, TimeUnit.SECONDS);
+            Future<Integer> result = service.schedule(() -> {System.out.println("-" + 10 + "-"); return 10;}, 10, TimeUnit.SECONDS);
         }
         finally {
             Thread.sleep(10000);

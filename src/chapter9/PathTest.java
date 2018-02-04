@@ -41,8 +41,8 @@ public class PathTest {
             System.out.println("traverse path2: " + currentPath);
         }
 
-        System.out.println("Root of a relative path: " + path2.getRoot() );
-        System.out.println("Root of an absolute path: " + path1.getRoot() );
+        System.out.println("Root of a relative path: " + path1.getRoot() );
+        System.out.println("Root of an absolute path: " + path2.getRoot() );
 
         // isAbsolute(), toAbsolutePath
         System.out.println( "path1 isAbsolute(): " + path1.isAbsolute() );
@@ -53,7 +53,7 @@ public class PathTest {
         System.out.println("path11: " + path11);
         System.out.println("path12: " + path12);
 
-        Path notExistingPath = Paths.get( "Users\\ocp8\\src\\chapter9\\files\\foto.png" );
+        Path notExistingPath = Paths.get( "Users\\ocp8\\src\\chapterBla\\files\\foto.png" );
         System.out.println("toAbsolutePath on not existing relative path: " + notExistingPath.toAbsolutePath());
 
         // subpath
@@ -110,7 +110,6 @@ public class PathTest {
         // Exception zur Laufzeit
         // System.out.println( "toRealPath on a symbolic Link: " + symbolicLinkPath.toRealPath());
         //System.out.println( "toRealPath on a symbolic Link with NOFOLLOW_LINKS: " + symbolicLinkPath.toRealPath(LinkOption.NOFOLLOW_LINKS));
-
 
     }
 }

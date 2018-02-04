@@ -10,16 +10,19 @@ public class TraverseDirectories {
 
     public static void main( String... args ){
 
-        Path basis = Paths.get( "D:/" );
+        Path basis = Paths.get( "D:/00-BRENNEN & KOPIEREN" );
 
         try{
-            Files.walk( basis )
-                 .filter( path -> Files.isRegularFile( path ) )
-                 .filter( path -> path.toString().endsWith( ".mkv" ) )
-                 .forEach( System.out::println );
+            long count = Files.walk( basis )
+                              .filter( Files::isRegularFile )
+                              .filter( path -> path.toString().endsWith( ".mp3" ) )
+                              .count();
+
+            System.out.println(count);
         }
         catch( UncheckedIOException ade){
             System.out.println("Access denied!");
+            System.err.println(ade.getLocalizedMessage());
         }
         catch( IOException ioe ){
             System.out.println("Handle IOException");

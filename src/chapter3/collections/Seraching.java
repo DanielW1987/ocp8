@@ -27,5 +27,4 @@ public class Seraching {
         System.out.println( index1 );
 
     }
-
 }

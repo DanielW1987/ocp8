@@ -4,15 +4,15 @@ import java.sql.*;
 
 public class ReadingResultSets {
 
-    public static void main(String... args) throws Exception{
+    public static void main(String... args) throws Exception {
 
         // Forward-only ResultSet
         Connection con = DatabaseConnection.connectViaDataSource();
         Statement stmt = con.createStatement();
-        ResultSet rs   = stmt.executeQuery("SELECT * FROM animal");
+        ResultSet rs = stmt.executeQuery("SELECT * FROM animal");
 
         System.out.println("Forward-only ResultSet");
-        while(rs.next()){
+        while (rs.next()) {
             int id = rs.getInt(1);
             int species_id = rs.getInt("species_id");
             String name = rs.getString(3);
@@ -32,8 +32,8 @@ public class ReadingResultSets {
         ResultSet rs2 = stmt.executeQuery("Select * FROM species");
 
         System.out.println("Scrollable ResultSet");
-        while(rs2.next()){
-            int id      = (Integer) rs2.getObject("id");
+        while (rs2.next()) {
+            int id = (Integer) rs2.getObject("id");
             String name = rs2.getString(2);
             System.out.println(id + " " + name);
         }

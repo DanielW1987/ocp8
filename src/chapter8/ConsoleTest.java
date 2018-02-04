@@ -4,7 +4,7 @@ import java.io.*;
 
 public class ConsoleTest {
 
-    public static void main(String... args) throws IOException{
+    public static void main(String... args){
 
         Console console = System.console();
 
@@ -22,9 +22,9 @@ public class ConsoleTest {
             String input2 = console.readLine( "Bitte gib einen %s hier ein: ", "Text" );
 
             // Eingabe über BufferedReader
-            BufferedReader reader = new BufferedReader( console.reader() );
-            System.out.print( "Eingabe via BufferedReader: " );
-            String input3 = reader.readLine();
+            //BufferedReader reader = new BufferedReader( console.reader() );
+            //System.out.print( "Eingabe via BufferedReader: " );
+            //String input3 = reader.readLine();
 
             // Passworteingabe
             char[] password = console.readPassword( "Password: " );
@@ -32,11 +32,8 @@ public class ConsoleTest {
                 System.out.print(password[index]);
             }
         }
-
         else{
             System.out.println("console is null");
         }
-
-
     }
 }

@@ -17,14 +17,14 @@ public class ConcurrentCollectionTest {
         // Schleife wird in jedem Fall nur 3 Mal durchlaufen
         for(Integer item : concurrentList){
             int rnd = new Random().nextInt(100);
-            System.out.println("Add " + rnd + " to CopyOnWriteArrayList!");
+            System.out.println("(1) Add " + rnd + " to CopyOnWriteArrayList!");
             concurrentList.add(rnd);
         }
 
         Iterator<Integer> iterator = concurrentList.iterator();
         while (iterator.hasNext()){
             int rnd = new Random().nextInt(100);
-            System.out.println("Add " + rnd + " to CopyOnWriteArrayList!");
+            System.out.println("(2) Add " + rnd + " to CopyOnWriteArrayList!");
             concurrentList.add(rnd);
             iterator.next();
         }
@@ -45,8 +45,5 @@ public class ConcurrentCollectionTest {
             concurrentSet.add(rnd);
             iterator.next();
         }
-
-
-
     }
 }

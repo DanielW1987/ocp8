@@ -19,7 +19,7 @@ public class ParallelStreamTest {
         ZonedDateTime startSequentially = ZonedDateTime.now();
         test.processDataSequentially(data);
         ZonedDateTime endSequentially = ZonedDateTime.now();
-        long secondsSequentially = startSequentially.until(endSequentially, ChronoUnit.SECONDS);
+        long secondsSequentially = ChronoUnit.SECONDS.between(startSequentially, endSequentially);
         System.out.println("Duration sequentially: " + secondsSequentially + " sec.");
 
         ZonedDateTime startParallel = ZonedDateTime.now();

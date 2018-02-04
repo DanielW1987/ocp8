@@ -3,11 +3,12 @@ package chapter7;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.concurrent.ForkJoinPool;
+import java.util.concurrent.ForkJoinTask;
 import java.util.concurrent.RecursiveAction;
 import java.util.concurrent.RecursiveTask;
 
 /**
- * Es sollen 100 Tiere gewogen werden.
+ * Es sollen 10 Tiere gewogen werden.
  * Angenommen 1 Thread benötigt eine Minute zum Wiegen von drei Tieren und die 10 Tiere sollen innerhalb von 1 Minute
  * gewogen sein, ist offensichtlich, dass 1 Thread alleine diese Aufgabe nicht übernehmen kann. Die Aufgabe des Wiegens
  * wird daher rekursiv in Einzelaufgaben zerlegt und von Worker-Threads bearbeitet. Die Anzahl der Einzelaufgaben ist
@@ -15,19 +16,18 @@ import java.util.concurrent.RecursiveTask;
  */
 public class ForkJoinTest {
 
-    public static void main(String... args){
+    public static void main(String... args) throws Exception{
 
-        Double[] weights = new Double[100];
+        Double[] weights = new Double[10];
         MyRecursiveAction action = new MyRecursiveAction(0, weights.length, weights);
         ForkJoinPool myForkJoinPool = new ForkJoinPool();
         myForkJoinPool.invoke(action); // blockiert so lange bis das Ergebnis vorliegt
 
-        Arrays.asList(weights).stream()
-                .forEach(e -> System.out.print(e + " "));
+        System.out.println(Arrays.asList(weights).stream().mapToDouble(e -> e).sum());
 
         RecursiveTask<Double> task = new MyRecursiveTask(0, weights.length, weights);
-        double sum = myForkJoinPool.invoke(task);
-        System.out.println("Gewicht in Summe: " + sum);
+        ForkJoinTask<Double> result = myForkJoinPool.submit(task);
+        System.out.println("Gewicht in Summe: " + result.get());
 
     }
 }

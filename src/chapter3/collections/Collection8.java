@@ -12,5 +12,4 @@ public class Collection8 {
         System.out.println(names);
 
     }
-
 }

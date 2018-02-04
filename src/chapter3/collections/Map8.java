@@ -86,7 +86,5 @@ public class Map8 {
         fruitPrices.merge("Bread", 42, Integer::sum);
         System.out.println("Prices map: " + fruitPrices);
 
-
-
     }
 }

@@ -46,12 +46,12 @@ class MyClass<T>{
         return value;
     }
 
-    // compiler can't infer E
+    // compiler can't infer E, so you have to make <E>
     public <E> E getE(E e){
         return e;
     }
 
-    // compiler can't infer T (no instance of class needed for static methods)
+    // compiler can't infer T in static methods (no instance of class needed for static methods), so you have to make <T>
     public static <T> T getValue(T value){
         return value;
     }

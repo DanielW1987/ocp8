@@ -170,27 +170,26 @@ public class CollectorsTest {
         System.out.println(result15);
 
         /*
-         * Kompiliert nicht
          * Beispiel 16 - mapping
          * Funktioniert in Kombination mit groupingBy.
          * Z. B. werden Elemente in einem Stream wieder in Gruppen aufgeteilt. Beim Value soll aber ein Mapping auf einen
          * anderen Datentypen durchgeführt werden. Folgendes Beispiel zeigt, wie Strings ihrer Länge nach gruppiert werden
          * und der Value auf den kleinsten Buchstaben der mgl. Values gemappt wird.
          */
-        // Stream<String> stringStream16              = Stream.of("lions", "tigers", "bears");
-        // Map<Integer, Optional<Character>> result16 = stringStream16.collect( Collectors.groupingBy(   s -> s.length()
-        //                                                                                            , Collectors.mapping( s -> s.charAt(0), Collectors.minBy(Comparator.naturalOrder()) ) ) );
-        // System.out.println(result16);
+         //Stream<String> stringStream16              = Stream.of("lions", "tigers", "bears");
+         //Map<Integer, Optional<Character>> result16 = stringStream16.collect( Collectors.groupingBy(  e -> e.length()
+         //                                                                                           , Collectors.mapping( s -> s.charAt(0), Collectors.toList()) ) ) );
+         //System.out.println(result16);
 
         /*
          * Kompiliert nicht
          * Beispiel 17 - mapping
          * Kürzere Variante von Beispiel 16, wenn Collectors über einen static import importiert wurde
          */
-        // Stream<String> stringStream17              = Stream.of("lions", "tigers", "bears");
-        // Map<Integer, Optional<Character>> result17 = stringStream17.collect( Collectors.groupingBy(   s -> s.length()
-        //                                                                                             , mapping( s -> s.charAt(0), minBy(Comparator.naturalOrder()) ) ) );
-        // System.out.println(result17);
+        //Stream<String> stringStream17              = Stream.of("lions", "tigers", "bears");
+        //Map<Integer, Optional<Character>> result17 = stringStream17.collect( Collectors.groupingBy(  s -> s.length()
+        //                                                                                            , mapping( s -> s.charAt(0), minBy(Comparator.naturalOrder()) ) ) );
+        //System.out.println(result17);
     }
 
     private static <T> List<T> combineList( List<T> list1, List<T> list2){

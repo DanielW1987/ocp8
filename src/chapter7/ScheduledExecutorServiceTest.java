@@ -39,7 +39,7 @@ public class ScheduledExecutorServiceTest {
 
     private static void test() throws Exception{
 
-        // The period is short than the execution of the task
+        // The period is shorter than the execution of the task
         ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
         service.scheduleAtFixedRate( () -> doSomeLongWork(), 0, 1, TimeUnit.SECONDS );
 

@@ -30,8 +30,17 @@ public class LocaleTest {
         locale = new Locale("xx", "xx");
         System.out.println(locale);  // xx_XX
 
+        // Builder
+        locale = new Locale.Builder()
+                           .setLanguage("de")
+                           .setRegion("DE")
+                           .build();
+
         // Factory Method
         locale = Locale.forLanguageTag("de");
         System.out.println(locale); // de
+
+        locale = Locale.forLanguageTag("de_DE");
+        System.out.println("Empty: " + locale); // de
     }
 }

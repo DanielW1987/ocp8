@@ -25,11 +25,25 @@ class Outer {
         // Kompiliert nicht, da LocalInner noch nicht gefunden werden kann
         // LocalInner li = new LocalInner();
 
+        // Access modifier not allowed for local inner classes
+        // public class LocalInner{}
+
+        // static not allowed for local inner classes
+        // static class Inner{}
+
         // local inner class muss vor erstmaliger Instanziierung implementiert sein
         class LocalInner {
 
             int i = 41;
             String s = "inner s";
+            // private static int j  = 2; // static member not allowed, also static inner classes
+            public static final int k = 1; // but static final is okay
+
+            // static methods not allowed
+            // public static void print(){}
+
+            // member classes are allowed, but should package-private
+            class ClassA{}
 
             void displayMessage() {
 

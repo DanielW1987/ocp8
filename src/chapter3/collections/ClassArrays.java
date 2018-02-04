@@ -10,7 +10,7 @@ public class ClassArrays {
         String[] arr      = { "gerbil", "mouse" };
         List<String> list = Arrays.asList( arr );
 
-        // Änderungen in der Liste führen auch zu Änderungen im Array
+        // Änderungen in der Liste führen auch zu Änderungen im Array (umgedreht gilt das gleiche)
         list.set( 1, "test" );
         System.out.println( Arrays.toString( arr ) );
         System.out.println( list );

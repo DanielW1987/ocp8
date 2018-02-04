@@ -18,6 +18,5 @@ public class QueueTest {
         System.out.println(myQueue.peek());
         System.out.println(myQueue.peek()); // Entnimmt immer das erste Element, Rückgabe ist 2 Mal '1'
 
-
     }
 }

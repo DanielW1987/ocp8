@@ -7,6 +7,24 @@ public class Map8 {
     public static void main( String... args ){
 
         /*
+         * computeIfAbsent
+         */
+        Map<Integer, Deque<String>> computeMap = new HashMap<>();
+        Deque<String> deque = new ArrayDeque<>();
+        deque.add("Foo");
+        deque.add("Bar");
+
+        computeMap.put(1, new ArrayDeque<>());
+        computeMap.put(2, deque);
+
+        computeMap.computeIfAbsent(1, k -> new ArrayDeque<>() ).add("Test");
+        System.out.println(computeMap);
+        computeMap.computeIfAbsent(2, k -> new ArrayDeque<>()).add("Test");
+        System.out.println(computeMap);
+        computeMap.computeIfAbsent(3, k -> new ArrayDeque<>()).add("Test");
+        System.out.println(computeMap);
+
+        /*
          * putIfAbsent
          * Fügt einen neuen KeyValue der Map hinzu. Der Value wird nicht hinzugefügt, wenn bereits
          * ein non-null Value in der Map existiert.
